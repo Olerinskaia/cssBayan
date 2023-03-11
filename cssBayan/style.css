@@ -48,9 +48,13 @@ input {
   display: flex;
   justify-content: space-between;
   padding: 1em;
+  color: white;
   background: #2c3e50;
   font-weight: bold;
   cursor: pointer;
+}
+.wrapper:hover input:checked {
+  color: blue;
 }
 /* Icon */
 .tab-label:hover {
@@ -62,9 +66,12 @@ input {
   color: white;
   float: right;
   margin-left: 5px;
-  opacity: 1;
+  opacity: 0;
   text-align: center;
   transition: all 0.35s;
+}
+.wrapper:hover .tab-label::after {
+  opacity: 1;
 }
 
 input:checked + .tab-label::after {
@@ -89,8 +96,6 @@ input:checked + .tab-label::after {
   background: darken(#2c3e50, 10%);
 }
 
-input:checked {
-}
 input:checked + .tab-label {
   background: darken(#2c3e50, 10%);
 }
