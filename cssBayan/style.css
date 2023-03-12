@@ -57,17 +57,21 @@ input {
 
 .wrapper:hover .tab-text::after {
   opacity: 1;
+  transition: all 1s;
 }
 .wrapper:hover .tab-text {
   color: #000000;
+  transition: all 0.5s;
 }
 .wrapper:hover input:checked + .tab-text {
   color: #000000;
+  transition: all 0.5s;
 }
 
 input:checked + .tab-text::after {
   transform: rotate(45deg);
   color: #000000;
+  transition: all 0.5s;
 }
 .wrapper input:checked + .tab-text {
   color: #000000;
@@ -84,22 +88,37 @@ input:checked + .tab-text::after {
 
 input:checked::after {
   transform: rotate(90deg);
-}
-
-input:hover ~ .tab-content {
-  max-height: 100vh;
-  padding: 1em;
   transition: all 0.5s;
 }
+input:not(:checked) ~ .tab-content {
+  transition: all 0.5s;
+  display: none;
+}
+input:hover ~ .tab-content {
+  transition: all 0.5s;
+  display: flex;
+  max-height: 100vh;
+  padding: 1em;
+}
+
 input:checked ~ .tab-content {
   max-height: 100vh;
   padding: 1em;
   transition: all 0.5s;
 }
-input:not(:checked) ~ .tab-content {
-  display: none;
-}
+
 .tab-img {
   max-width: 300px;
   max-height: 400px;
+  animation-name: Appearance;
+  animation-duration: 1.5s;
+  animation-timing-function: cubic-bezier(0.1, -0.6, 2);
+}
+@keyframes Appearance {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
