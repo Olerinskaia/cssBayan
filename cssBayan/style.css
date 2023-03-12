@@ -96,6 +96,9 @@ input:checked ~ .tab-content {
   padding: 1em;
   transition: all 0.5s;
 }
+input:not(:checked) ~ .tab-content {
+  display: none;
+}
 .tab-img {
   max-width: 300px;
   max-height: 400px;
