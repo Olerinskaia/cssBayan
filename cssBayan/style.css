@@ -7,6 +7,7 @@
   margin: 0;
   line-height: 2;
   text-align: center;
+  border-bottom: 1px solid #dce1e5;
 }
 
 input {
@@ -26,65 +27,53 @@ input {
   justify-content: space-between;
   flex-direction: column;
   padding: 1em;
-  color: white;
-  background: #2c3e50;
+  color: #000000;
+  background: white;
   font-weight: bold;
   cursor: pointer;
+  border-bottom: 1px solid #dce1e5;
 }
-.wrapper:hover input:checked {
-  color: blue;
-}
-
-.tab-label:hover {
-  background: darken(#2c3e50, 10%);
-}
+/* cross */
 .tab-text::after {
   content: '+';
   font-size: 15px;
-  color: white;
+  color: #000000;
   float: right;
   margin-left: 5px;
   opacity: 0;
   text-align: center;
   transition: all 0.5s;
 }
+/* text */
+.tab-text {
+  color: RGB(0, 89, 217);
+}
+
 .wrapper:hover .tab-text::after {
   opacity: 1;
 }
+.wrapper:hover .tab-text {
+  color: #000000;
+}
 .wrapper:hover input:checked + .tab-text {
-  color: blue;
+  color: #000000;
 }
 
 input:checked + .tab-text::after {
   transform: rotate(45deg);
+  color: #000000;
 }
+
 .tab-content {
   display: flex;
   justify-content: center;
   max-height: 0;
   padding: 0 1em;
-  color: #2c3e50;
+  color: #000000;
   background: white;
   transition: all 0.5s;
 }
-.tab-text {
-  color: RGB(0, 89, 217);
-}
-.tab-close {
-  display: flex;
-  justify-content: flex-end;
-  padding: 1em;
-  font-size: 0.75em;
-  background: #2c3e50;
-  cursor: pointer;
-}
-.tab-close:hover {
-  background: darken(#2c3e50, 10%);
-}
 
-input:checked + .tab-label {
-  background: darken(#2c3e50, 10%);
-}
 input:checked::after {
   transform: rotate(90deg);
 }
