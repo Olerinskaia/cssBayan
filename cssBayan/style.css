@@ -14,7 +14,6 @@
 }
 
 input {
-  position: absolute;
   opacity: 0;
   z-index: -1;
   display: none;
@@ -38,7 +37,7 @@ input {
   border-bottom: 1px solid #dce1e5;
 }
 /* cross */
-.tab-text::after {
+.tab-cross {
   content: '+';
   font-size: 1rem;
   color: #000000;
@@ -56,7 +55,7 @@ input {
   transition: all 0.5s;
 }
 
-.wrapper:hover .tab-text::after {
+.wrapper:hover .tab-cross {
   opacity: 1;
   transition: all 1s;
 }
@@ -69,7 +68,7 @@ input {
   transition: all 0.5s;
 }
 
-input:checked + .tab-text::after {
+input:checked + .tab-cross {
   transform: rotate(45deg);
   color: #000000;
   transition: all 0.5s;
