@@ -133,11 +133,27 @@ input:checked ~ .tab-content {
     opacity: 1;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 830px) {
   .tab-text {
     font-size: 0.9rem;
   }
-  .tab-text::after {
+  .tab-cross {
     font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  .tab-text {
+    font-size: 0.8rem;
+  }
+  .tab-cross {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 1930) {
+  .tab-text {
+    font-size: 1.3rem;
+  }
+  .tab-cross {
+    font-size: 1.3rem;
   }
 }
