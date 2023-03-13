@@ -3,14 +3,18 @@
   max-width: 43.75rem;
   padding: 1rem 1rem 1rem 1rem;
 }
-
+.wrapper-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .title {
   display: flex;
   font-size: 1.6rem;
   font-family: 'Roboto', sans-serif;
   margin: 0;
   line-height: 2;
-  border-bottom: 1px solid #dce1e5;
+  border-bottom: 0.06rem solid #dce1e5;
 }
 
 input {
@@ -23,6 +27,9 @@ input {
   width: 100%;
   color: white;
   overflow: hidden;
+}
+.tab:hover .wrapper-text .tab-cross {
+  transform: rotate(45deg);
 }
 .tab-label {
   display: flex;
@@ -40,12 +47,13 @@ input {
   background-color: red;
 }
 /* cross */
-.tab-text::after {
+.tab-cross {
+  display: block;
   content: '+';
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   color: #000000;
-  float: right;
+
   margin-left: 0.3rem;
   opacity: 0;
   text-align: center;
@@ -59,7 +67,7 @@ input {
   transition: all 0.35s;
 }
 
-.wrapper:hover .tab-text::after {
+.wrapper:hover .wrapper-text .tab-cross {
   opacity: 1;
   transition: all 0.35s;
 }
@@ -72,7 +80,7 @@ input {
   transition: all 0.35s;
 }
 
-input:checked + .tab-text::after {
+input:checked ~ .wrapper-text .tab-cross {
   transform: rotate(45deg);
   color: #000000;
   transition: all 0.35s;
@@ -90,10 +98,6 @@ input:checked + .tab-text::after {
   transition: all 0.35s;
 }
 
-input:not(:checked) ~ .tab-content {
-  transition: all 0.35s;
-  display: none;
-}
 input:hover ~ .tab-content {
   transition: all 0.35s;
   display: flex;
