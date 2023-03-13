@@ -1,0 +1,159 @@
+.wrapper {
+  margin: 0 auto;
+  max-width: 43.75rem;
+  padding: 1rem 1rem 1rem 1rem;
+}
+.wrapper-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title {
+  display: flex;
+  font-size: 1.6rem;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  line-height: 2;
+  border-bottom: 0.06rem solid #dce1e5;
+}
+
+input {
+  opacity: 0;
+  z-index: -1;
+  display: none;
+}
+
+.tab {
+  width: 100%;
+  color: white;
+  overflow: hidden;
+}
+.tab:hover .wrapper-text .tab-cross {
+  transform: rotate(45deg);
+}
+.tab-label {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: #000000;
+  background: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-bottom: 1px solid #dce1e5;
+}
+.tab-label:target {
+  background-color: red;
+}
+/* cross */
+.tab-cross {
+  display: block;
+  content: '+';
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  color: #000000;
+
+  margin-left: 0.3rem;
+  opacity: 0;
+  text-align: center;
+  transition: all 0.35s;
+}
+/* text */
+.tab-text {
+  color: RGB(0, 89, 217);
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  transition: all 0.35s;
+}
+
+.wrapper:hover .wrapper-text .tab-cross {
+  opacity: 1;
+  transition: all 0.35s;
+}
+.wrapper:hover .tab-text {
+  color: #000000;
+  transition: all 0.35s;
+}
+.wrapper:hover input:checked + .tab-text {
+  color: #000000;
+  transition: all 0.35s;
+}
+
+input:checked ~ .wrapper-text .tab-cross {
+  transform: rotate(45deg);
+  color: #000000;
+  transition: all 0.35s;
+}
+.wrapper input:checked + .tab-text {
+  color: #000000;
+}
+.tab-content {
+  display: flex;
+  justify-content: center;
+  max-height: 0;
+
+  color: #000000;
+  background: white;
+  transition: all 0.35s;
+}
+
+input:hover ~ .tab-content {
+  transition: all 0.35s;
+  display: flex;
+  max-height: 100vh;
+  padding: 1em;
+}
+
+input:checked ~ .tab-content {
+  max-height: 100vh;
+  padding: 1em;
+  transition: all 0.35s;
+}
+
+.tab-img {
+  max-width: 18.75rem;
+  max-height: 25rem;
+  object-fit: cover;
+  animation-name: Appearance;
+  animation-duration: 1.5s;
+  animation-timing-function: cubic-bezier(0.1, -0.6, 2);
+}
+.tab-label:active .tab-text {
+  color: RGB(0, 89, 217);
+}
+.tab-label:active .tab-content > .tab-img {
+  filter: grayscale(80%);
+}
+@keyframes Appearance {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@media screen and (max-width: 830px) {
+  .tab-text {
+    font-size: 0.9rem;
+  }
+  .tab-cross {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  .tab-text {
+    font-size: 0.8rem;
+  }
+  .tab-cross {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 1930) {
+  .tab-text {
+    font-size: 1.3rem;
+  }
+  .tab-cross {
+    font-size: 1.3rem;
+  }
+}
